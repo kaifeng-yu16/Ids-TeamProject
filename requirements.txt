@@ -1,0 +1,5 @@
+mlflow
+pylint
+databricks-cli
+databricks-automl-runtime==0.2.5.1
+xgboost==1.5.1
