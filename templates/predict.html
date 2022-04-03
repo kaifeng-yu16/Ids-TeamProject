@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drink type prediction</title>
+    </head>
+    <body>
+        <p>Please enter info for your drink:</p>
+        <form method="POST">
+            <p>Volume (ml): </p><input type="number" step="any" name="volume"></p>
+            <p>Caffeine (mg): </p><input type="number" name="caffeine"></p>
+            <p>Calories: </p></Calories><input type="number" name="calories"></p>
+            <input type="submit" value="predict">
+        </form>
+        {% if name %}
+        </br>This drink is: {{res}}
+        {% endif %}
+    </body>
+</html>
