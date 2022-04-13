@@ -7,4 +7,4 @@ sklearn==0.0
 pandas==1.4.2
 numpy==1.22.3
 holidays==0.13
-black
+black==22.3.0
