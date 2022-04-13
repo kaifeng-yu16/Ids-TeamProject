@@ -76,8 +76,16 @@ def do_predict():
                       PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory,
                       Diabetic, PhysicalActivity, GenHealth, SleepTime,
                       Asthma, KidneyDisease, SkinCancer)
+        if (res == 0):
+            res = "You are not likely to have a heart attack!"
+        else:
+            res = "High risk of a heart attack!"
         return render_template("predict.html", name=1, res=res)
     return render_template("predict.html", name=0)
+    
+@app.route("/")
+def main_menu():
+    return render_template("main_menu.html", name=0)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

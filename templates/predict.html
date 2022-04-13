@@ -36,7 +36,7 @@ body {
     margin: 12px;
 }
 
-label, input, textarea {
+label, input, textarea, select {
   display: block;
   width: 100%;
   font-size: 12pt;
@@ -46,6 +46,11 @@ label, input, textarea {
 
 input {
   margin-bottom: 24pt;
+}
+
+select {
+  margin-bottom: 15pt;
+  margin-top: 5pt;
 }
 
 h3 {
@@ -65,7 +70,7 @@ em {
   font-weight: bold;
 }
 
-input, textarea {
+input, textarea, select {
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
@@ -74,7 +79,7 @@ input, textarea {
   outline: none;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
   border: 1px solid #6bd4b1;
 }
 
@@ -108,6 +113,9 @@ button:hover {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
@@ -116,40 +124,177 @@ textarea:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+/* --------- Tooltip Styles ---------- */
+
+.tooltip{
+position: relative;
+bottom: 2px;
+background: rgba(0,0,0,0.2);
+padding: 3px 6px;
+border-radius: 100%;
+font-size: 8px;
+cursor: help;
+}
+.tooltip::before, .tooltip::after{
+position: absolute;
+left: 50%;
+opacity: 0;
+transition: allease 0.3s;
+pointer-events:none
+}
+.tooltip::before{
+content: "";
+border-width: 10px 8px 08px;
+border-style: solid;
+border-color: rgba(0,0,0,0.7) transparent transparent transparent;
+top: -20px;
+margin-left: -8px;
+}
+.tooltip::after{
+content: attr(data-tooltip);
+background: rgba(0,0,0,0.7);
+top: -20px;
+transform: translateY(-100%);
+font-size: 14px;
+margin-left: -150px;
+width: 350px;
+border-radius: 10px;
+color: #fff;
+padding: 14px;
+}
+
+/* Hover states */
+
+.tooltip:active::before, .tooltip:active::after{
+opacity: 1;
+}
+
     </style>
     <body>
         </br></br>
-        <h2>Please enter your info</h2>
+        <h2>Please enter your info</h2></br>
         <form method="POST">
             <div class='column'>
-            <p>BMI: </p><input type="number" step="any" name="BMI"></p>
-            <p>Smoking: </p><input type="number" name="Smoking"></p>
-            <p>AlcoholDrinking: </p><input type="number" name="AlcoholDrinking"></p>
-            <p>Stroke: </p><input type="number" name="Stroke"></p>
+            <p>BMI: <font color="red">*</font></p><input type="number" step="any" name="BMI" required></p>
+            <p>Sex: <font color="red">*</font>
+              <select name="Sex" required>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+              </select><br>
+            </p>
+            <p>AlcoholDrinking: 
+              <span class="tooltip"data-tooltip="Are you a heavy drinker? (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)">?</span>
+              <select name="AlcoholDrinking" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
+            <p>Stroke: 
+              <select name="Stroke" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
             </div>
             <div class='column'>
-            <p>PhysicalHealth: </p><input type="number" name="PhysicalHealth"></p>
-            <p>MentalHealth: </p><input type="number" name="MentalHealth"></p>
-            <p>DiffWalking: </p><input type="number" name="DiffWalking"></p>
-            <p>Sex: </p><input type="number" name="Sex"></p>
+            <p>SleepTime: <font color="red">*</font><input type="number" step="any" name="SleepTime" required></p>
+            <p>AgeCategory: <font color="red">*</font>
+              <select name="AgeCategory" required>
+                <option value="0">18-24</option>
+                <option value="1">25-29</option>
+                <option value="2">30-34</option>
+                <option value="3">35-39</option>
+                <option value="4">40-44</option>
+                <option value="5">45-49</option>
+                <option value="6">50-54</option>
+                <option value="7">55-59</option>
+                <option value="8">60-64</option>
+                <option value="9">65-69</option>
+                <option value="10">70-74</option>
+                <option value="11">74-79</option>
+                <option value="12">80 or older</option>
+              </select><br>
+            </p>
+            <p>Smoking: <!--<input type="number" name="Smoking" required></p>-->
+              <span class="tooltip"data-tooltip="Have you smoked at least 100 cigarettes in your entire life?">?</span>
+              <select name="Smoking" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
+            <p>DiffWalking: 
+              <span class="tooltip"data-tooltip="Do you have serious difficulty walking or climbing stairs?">?</span>
+              <select name="DiffWalking" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
             </div>
             <div class='column'>
-            <p>AgeCategory: </p><input type="number" name="AgeCategory"></p>
-            <p>Diabetic: </p><input type="number" name="Diabetic"></p>
-            <p>PhysicalActivity: </p><input type="number" name="PhysicalActivity"></p>
-            <p>GenHealth: </p><input type="number" name="GenHealth"></p>
+            <p>MentalHealth: 
+              <span class="tooltip"data-tooltip="Thinking about your mental health, for how many days during the past 30 days was your mental health not good?">?</span>
+              <input type="number" name="MentalHealth" value="0" required>
+            </p>
+            <p>PhysicalActivity: 
+              <span class="tooltip"data-tooltip="Did you do physical activity or exercise during the past 30 days other than their regular job">?</span>
+              <select name="PhysicalActivity" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select><br>
+            </p>
+            <p>Diabetic: 
+              <select name="Diabetic" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
+            <p>Asthma: 
+              <select name="Asthma" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
             </div>
             <div class='column'>
-            <p>SleepTime: </p><input type="number" step="any" name="SleepTime"></p>
-            <p>Asthma: </p><input type="number" name="Asthma"></p>
-            <p>KidneyDisease: </p><input type="number" name="KidneyDisease"></p>
-            <p>SkinCancer: </p><input type="number" name="SkinCancer"></p>
+            <p>PhysicalHealth: 
+              <span class="tooltip"data-tooltip="Thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?">?</span>
+              <input type="number" name="PhysicalHealth" value="0" required>
+            </p>
+            <p>GenHealth: 
+              <span class="tooltip"data-tooltip="Would you say that in general your health is..">?</span>
+              <select name="GenHealth" required>
+                <option value="4">Excellent</option>
+                <option value="3">Very good</option>
+                <option value="2">Good</option>
+                <option value="1">Fair</option>
+                <option value="0">Poor</option>
+        
+              </select><br>
+            </p>
+            <p>KidneyDisease: 
+              <select name="KidneyDisease" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
+            <p>SkinCancer: 
+              <select name="SkinCancer" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select><br>
+            </p>
             </div>
       
             <div style="margin:0 auto;width:100px;"><button type="submit">predict</button></div>
         </form>
         {% if name %}
-        </br>Result: {{res}}
+        </br><h2>{{res}}</h2></br>
+        </br>
+        <a href='/'>Try other tests</a>
+        {% else %}
+        </br>
+        <a href='/'>back</a>
         {% endif %}
     </body>
 </html>
