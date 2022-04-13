@@ -1,4 +1,4 @@
-from main import translate, app
+from main import app
 
 def test_main_menu():
     response = app.test_client().get("/")
