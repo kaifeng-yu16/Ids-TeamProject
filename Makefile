@@ -11,4 +11,10 @@ format:
 lint:
 	pylint --disable=R,C predict-fake-news.py main.py
 
-all: install lint test
+deploy:
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 432096997023.dkr.ecr.us-east-1.amazonaws.com
+	docker build -t ids_group_proj .
+	docker tag ids_group_proj:latest 432096997023.dkr.ecr.us-east-1.amazonaws.com/ids_group_proj:latest
+	docker push 432096997023.dkr.ecr.us-east-1.amazonaws.com/ids_group_proj:latest
+
+all: install format lint test deploy
