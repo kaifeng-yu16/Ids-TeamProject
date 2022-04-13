@@ -1,9 +1,10 @@
-mlflow
-pylint
-databricks-cli
+mlflow==1.24.0
+pylint==2.13.4
+databricks-cli==0.16.6
 databricks-automl-runtime==0.2.5.1
 xgboost==1.5.1
-sklearn
-pandas
-numpy
-holidays
+sklearn==0.0
+pandas==1.4.2
+numpy==1.22.3
+holidays==0.13
+black
