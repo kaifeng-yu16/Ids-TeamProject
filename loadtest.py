@@ -6,6 +6,14 @@ class ServiceUser(HttpUser):
     wait_time = between(1, 5)
     host = "https://igih3eivbr.us-east-1.awsapprunner.com"
 
+    @task(3)
+    def main_page(self):
+        self.client.get("/")
+
+    @task(2)
+    def predict_page(self):
+        self.client.get("/predict")
+
     @task
     def predict_post(self):
         self.client.post(
