@@ -42,7 +42,7 @@ By clicking "predict", the result will show up.
 <img width="525" alt="res" src="https://user-images.githubusercontent.com/89489224/164993181-9b2b7b35-eebe-4e9b-b2b6-4a7ed417741f.png">
 
 ## Load Test
-Due to the resource contrain, the load test was performed on local machine. Five hundreds users were simulated at a spawn rate of 5 users spawned/second. As shown below, the failure rate remained 0 while testing. As the requests went up, the response time was in a resonable range though there was a peak during the process.
+Due to the resource contrain, the load test was performed on local machine. Five hundreds users were simulated at a spawn rate of 5 users spawned/second. As shown below, the failure rate remained 0 while testing. As the requests went up, the response time was in a resonable range though there was a peak during the process. In most of the time, the median response time was below 300ms.
 
 
 ![number_of_users_1650826137](https://user-images.githubusercontent.com/89489224/164993337-a4436f97-6852-48d0-b33c-3d7de1763140.png)
