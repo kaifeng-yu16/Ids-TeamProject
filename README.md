@@ -10,6 +10,13 @@ Website: https://igih3eivbr.us-east-1.awsapprunner.com
 According to CDC, “[h]eart disease is the leading cause of death in the United States.” [1] And there are many risk factors like high blood pressure, obesity, etc.[2] So, it may be meaningful to have a micro-service based on a machine learning model to tell the potential risk of having heart disease.
 
 [1] Centers for Disease Control and Prevention. Underlying Cause of Death, 1999–2018. CDC WONDER Online Database. Atlanta, GA: Centers for Disease Control and Prevention; 2018. Accessed March 12, 2020.
-[2] 
+
+[2] “About Heart Disease,” Sept. 27, 2021. Accessed on: April 24, 2022. [Online]. Available: https://www.cdc.gov/heartdisease/about.htm
+
+## Data
+From Kaggle: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
+
+![image](https://user-images.githubusercontent.com/89489224/164992308-08da9d03-0833-4b59-89c7-fddc133d6244.png)
+
 
 
