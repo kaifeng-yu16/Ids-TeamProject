@@ -33,8 +33,21 @@ Users will be first pointed to the main page as follows.
 
 <img width="530" alt="main" src="https://user-images.githubusercontent.com/89489224/164993039-5a97ed49-5564-45b6-9408-1a8eaf944ddb.png">
 
-By clicking "Heartattack Prediction", the page will jump to the precition page as below. Auto-filling was adopted in this page. Users will only need to enter $BMI$ and $Sleep/nTime$. Other entries could also be modified if the users want to.
+By clicking "Heartattack Prediction", the page will jump to the precition page as below. Auto-filling was adopted in this page. Users will only need to enter "BMI" and "Sleep Time". Other entries could also be modified if the users want to.
 
 <img width="575" alt="prediction" src="https://user-images.githubusercontent.com/89489224/164993102-94acf814-76c4-48c8-aa7c-83a05d6edfe8.png">
 
+By clicking "predict", the result will show up.
 
+<img width="525" alt="res" src="https://user-images.githubusercontent.com/89489224/164993181-9b2b7b35-eebe-4e9b-b2b6-4a7ed417741f.png">
+
+## Load Test
+Due to the resource contrain, the load test was performed on local machine. Five hundreds users were simulated at a spawn rate of 5 users spawned/second. As shown below, the failure rate remained 0 while testing. As the requests went up, the response time was in a resonable range though there was a peak during the process.
+
+
+![number_of_users_1650826137](https://user-images.githubusercontent.com/89489224/164993337-a4436f97-6852-48d0-b33c-3d7de1763140.png)
+
+![response_times_(ms)_1650826137](https://user-images.githubusercontent.com/89489224/164993346-eca5a74a-9628-481a-8e45-85876c9920ad.png)
+
+
+![total_requests_per_second_1650826137](https://user-images.githubusercontent.com/89489224/164993349-a936897e-85f9-4b3e-a6b1-f10b980bfe93.png)
