@@ -6,6 +6,11 @@
 
 Website: https://igih3eivbr.us-east-1.awsapprunner.com
 
+The application was containerized using Docker! The Docker image could be easily built by running
+```shell
+docker build -t .
+```
+
 ## Introduction
 According to CDC, “[h]eart disease is the leading cause of death in the United States.” [1] And there are many risk factors like high blood pressure, obesity, etc.[2] So, it may be meaningful to have a micro-service based on a machine learning model to tell the potential risk of having heart disease.
 
@@ -22,3 +27,14 @@ From Kaggle: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators
 After data wrangling, AutoML was performed using Azure Databricks. The optimal machine learning model was selected. Then, the frontend was built using HTML. AWS Cloud9 developing environment was used. Next, AWS CodeBuild was used to compile and containerize the application into a Docker image. The image was pushed into Amazon Elastic Container Registry. Finally, the micro-service was deployed and served out using Amazon AppRunner.
 
 <img width="913" alt="workflow" src="https://user-images.githubusercontent.com/89489224/164992887-3ba91391-a230-41b6-889a-cec904ec1b47.png">
+
+## Result
+Users will be first pointed to the main page as follows.
+
+<img width="530" alt="main" src="https://user-images.githubusercontent.com/89489224/164993039-5a97ed49-5564-45b6-9408-1a8eaf944ddb.png">
+
+By clicking "Heartattack Prediction", the page will jump to the precition page as below. Auto-filling was adopted in this page. Users will only need to enter $BMI$ and $Sleep/nTime$. Other entries could also be modified if the users want to.
+
+<img width="575" alt="prediction" src="https://user-images.githubusercontent.com/89489224/164993102-94acf814-76c4-48c8-aa7c-83a05d6edfe8.png">
+
+
