@@ -51,3 +51,8 @@ Due to the resource contrain, the load test was performed on local machine. Five
 
 
 ![total_requests_per_second_1650826137](https://user-images.githubusercontent.com/89489224/164993349-a936897e-85f9-4b3e-a6b1-f10b980bfe93.png)
+
+## Future Work
+- Multiple endpoints could be set to enlarge the capacity of holding more requests
+- Distributed load test could be implemented on cloud to get higher RPS
+
