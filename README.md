@@ -17,3 +17,8 @@ According to CDC, “[h]eart disease is the leading cause of death in the United
 From Kaggle: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
 
 <img width="285" alt="numbers" src="https://user-images.githubusercontent.com/89489224/164992469-62d37abd-c4ff-40a1-ba92-ae3fca2911c5.png">
+
+## Workflow
+After data wrangling, AutoML was performed using Azure Databricks. The optimal machine learning model was selected. Then, the frontend was built using HTML. AWS Cloud9 developing environment was used. Next, AWS CodeBuild was used to compile and containerize the application into a Docker image. The image was pushed into Amazon Elastic Container Registry. Finally, the micro-service was deployed and served out using Amazon AppRunner.
+
+<img width="913" alt="workflow" src="https://user-images.githubusercontent.com/89489224/164992887-3ba91391-a230-41b6-889a-cec904ec1b47.png">
