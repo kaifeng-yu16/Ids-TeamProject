@@ -3,18 +3,18 @@ from locust import HttpUser, task, between
 
 
 class ServiceUser(HttpUser):
-    wait_time = between(1, 5)
+    wait_time = between(5, 8)
     host = "https://igih3eivbr.us-east-1.awsapprunner.com"
 
-    @task(3)
+    @task(20)
     def main_page(self):
         self.client.get("/")
 
-    @task(2)
+    @task(10)
     def predict_page(self):
         self.client.get("/predict")
 
-    @task
+    @task(1)
     def predict_post(self):
         self.client.post(
             "/predict",
