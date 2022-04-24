@@ -16,7 +16,8 @@ According to CDC, “[h]eart disease is the leading cause of death in the United
 ## Data
 From Kaggle: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
 
-![image](https://user-images.githubusercontent.com/89489224/164992308-08da9d03-0833-4b59-89c7-fddc133d6244.png)
+![image](https://user-images.githubusercontent.com/89489224/164992354-ea05317e-df6f-4237-868c-26f6901230c4.png)
+
 
 
 
